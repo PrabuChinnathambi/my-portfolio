@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: url(../../public/bg-svg.svg);
+  /* background-image: linear-gradient(to bottom, #83d1f8, #7dc1e3, #77b2cf, #70a3bb, #6a94a8); */
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: theme("colors.white");
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer components {
+  .btn {
+    background-color: transparent;
+    border: 1px solid theme("colors.white");
+    // border-top: 1px solid theme("colors.white") ;
+    // border-left: 1px solid theme("colors.white");
+    border-radius: theme("borderRadius.lg");
+    padding: theme("spacing.3");
+    box-shadow: theme("boxShadow.xl");
+    text-align: center;
+    text-wrap: nowrap;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition-duration: 300ms;
+  }
+  .btn:hover {
+    transform: scale(1);
+    background-color: black;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-[80px];
+    @apply font-serif;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  /* ... */
+}
