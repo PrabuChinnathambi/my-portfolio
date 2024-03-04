@@ -2,85 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-// .darkMode {
-//   --background: #051937;
-//   --blue: #61dbfb;
-//   --white: #f4f6f7;
-//   --black: #000000;
-//   --gray: #c3c3c3;
-//   --primary: #f4f6f7;
-//   --secondary: #c3c3c3;
-// }
+:root {
+  --background: #051937;
+  --blue: #61dbfb;
+  --white: #f4f6f7;
+  --black: #000000;
+  --gray: #c3c3c3;
+  --primary: #f4f6f7;
+  --secondary: #c3c3c3;
+}
 
-// .light {
-//   --background: 245, 245, 245;
-
-//   --border: 212, 212, 212;
-//   --card: 255, 255, 255;
-
-//   --copy-primary: 23, 23, 23;
-//   --copy-secondary: 115, 115, 115;
-
-//   --cta: 139, 92, 246;
-//   --cta-active: 124, 58, 237;
-//   --cta-text: 255, 255, 255;
-// }
-// .darkMode {
-//   background-image: radial-gradient(
-//     circle,
-//     #090909,
-//     #0b0b0b,
-//     #0d0d0d,
-//     #0e0e0e,
-//     #101010,
-//     #101010,
-//     #111111,
-//     #111111,
-//     #101010,
-//     #0f0f0f,
-//     #0e0d0e,
-//     #0d0c0c
-//   );
-//   height: 100vh;
-// }
-
-// .dark {
-//   // --background: radial-gradient(
-//   //   circle,
-//   //   #090909,
-//   //   #0b0b0b,
-//   //   #0d0d0d,
-//   //   #0e0e0e,
-//   //   #101010,
-//   //   #101010,
-//   //   #111111,
-//   //   #111111,
-//   //   #101010,
-//   //   #0f0f0f,
-//   //   #0e0d0e,
-//   //   #0d0c0c
-//   // );
-//   --background: #051937;
-
-//   --border: 38, 38, 38;
-//   --card: 23, 23, 23;
-
-//   --copy-primary: 250, 250, 250;
-//   --copy-secondary: 115, 115, 115;
-
-//   --cta: 99, 102, 241;
-//   --cta-active: 79, 70, 229;
-//   --cta-text: 255, 255, 255;
-// }
-
-// .darkMode {
-//   background: black;
-//   height: 100vh;
-//   background-position: center;
-//   background-size: cover;
-// }
+::-webkit-scrollbar {
+  display: none;
+}
 
 body {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
   background: radial-gradient(
     circle,
     #090909,
@@ -105,6 +46,7 @@ body {
     font-family: "short-baby";
     src: url("../../public/fonts/ShortBaby-Mg2w.ttf");
   }
+
   @font-face {
     font-family: "roboto";
     src: url("../../public/fonts/RobotoCondensed-VariableFont_wght.ttf");
@@ -116,6 +58,7 @@ body {
     text-wrap: balance;
   }
 }
+
 @layer base {
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
@@ -127,13 +70,14 @@ body {
     position: relative;
     color: white;
   }
+
   .underLine_animation::after {
     content: "";
     position: absolute;
     width: 100%;
     transform: scaleX(0);
     height: 1px;
-    bottom: -3px;
+    bottom: 0;
     left: 0;
     background-color: transparent;
     transform-origin: bottom right;
@@ -148,7 +92,22 @@ body {
 
   .selcted_menu {
     color: #61dbfb;
+    border-bottom: 1px solid #61dbfb;
+    border-radius: 0;
   }
+  // .selcted_menu::after{
+  //   content: "";
+  //   position: absolute;
+  //   width: 100%;
+  //   background-color: #61dbfb;
+  //   // transform: scaleX(0);
+  //   height: 2px;
+  //   bottom: -3px;
+  //   left: 0;
+  //   // background-color: transparent;
+  //   // transform-origin: bottom right;
+  //   // transition: transform 0.25s ease-out;
+  // }
 }
 
 @layer components {
@@ -168,35 +127,63 @@ body {
     padding: 10px 15px;
     min-width: 150px;
   }
+
   .btn:hover {
     transform: scale(1);
     background-color: black;
   }
+
   .selected-menu {
     transform: scale(1);
     background-color: black;
+  }
+
+  .aboutMe {
+    font-size: 150px;
+    color: rgba(255, 255, 255, 0.2);
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/tocinocode.appspot.com/o/global%2Fweb%20img%2Fimagehf.png?alt=media&token=9269010e-91c4-4cfe-aa4c-34dab3ef2271");
+    background-size: cover;
+    -webkit-background-clip: text;
+    animation: animate 14s linear infinite;
   }
 }
 
 @layer base {
   h1 {
+    @apply text-white;
     @apply text-[80px];
     @apply font-roboto;
   }
+
   h2 {
-    @apply text-[30px];
+    @apply text-white;
+    @apply text-[50px];
     @apply font-roboto;
   }
+
   h3 {
+    @apply text-white;
     @apply text-[20px];
     @apply font-roboto;
   }
-  p {
-    @apply text-[14px];
 
-    @apply lg:text-[16px];
+  p {
+    @apply text-gray;
+    @apply text-[12px];
+    @apply lg:text-[14px];
   }
+
   /* ... */
+}
+
+@keyframes animate {
+  0% {
+    background-position: left 0px top 0x;
+  }
+
+  40% {
+    background-position: left 900px top 0px;
+  }
 }
 
 @keyframes title {
@@ -205,18 +192,22 @@ body {
     letter-spacing: 0.25em;
     opacity: 0;
   }
+
   25% {
     line-height: 0%;
     opacity: 0%;
   }
+
   80% {
     opacity: 100%;
   }
+
   100% {
     line-height: 100%;
     opacity: 100%;
   }
 }
+
 .animate-title {
   animation: title 3s ease-out forwards;
 }
@@ -226,14 +217,17 @@ body {
     transform: translateY(100%);
     opacity: 0%;
   }
+
   30% {
     transform: translateY(0%);
     opacity: 100%;
   }
+
   100% {
     opacity: 0%;
   }
 }
+
 .animate-fade-left {
   animation: fade-left 3s ease-in-out forwards;
 }
@@ -243,14 +237,17 @@ body {
     transform: translateX(-100%);
     opacity: 0%;
   }
+
   30% {
     transform: translateX(0%);
     opacity: 100%;
   }
+
   100% {
     opacity: 0%;
   }
 }
+
 .animate-fade-right {
   animation: fade-right 3s ease-in-out forwards;
 }
@@ -260,14 +257,17 @@ body {
     transform: translateY(-100%);
     opacity: 0%;
   }
+
   30% {
     transform: translateY(0%);
     opacity: 100%;
   }
+
   100% {
     opacity: 0%;
   }
 }
+
 .animate-fade-right {
   animation: fade-Top 3s ease-in-out forwards;
 }

@@ -52,6 +52,12 @@ const config: Config = {
         gray_light: "#d3dce6",
         white: "#F4F6F7",
       },
+
+      textColor: {
+        'primary': "var(--white)",
+        'secondary': "var(--gray)",
+        'danger': "var(--blue)",
+      }
       // extend: {
 
       //   typography: {

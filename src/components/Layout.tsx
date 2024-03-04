@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
         quantity={200}
       />
       <Header />
-      <main className="container">{children}</main>
+      <main className="container pb-[5rem] ">{children}</main>
     </div>
   );
 };

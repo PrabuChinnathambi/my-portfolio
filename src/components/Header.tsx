@@ -2,7 +2,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Logo from "../../public/P_Logo.svg";
 import { useRouter } from "next/router";
-
 import React from "react";
 
 import { usePathname } from "next/navigation";
@@ -83,11 +82,11 @@ const NavBar = () => {
                     onClick={() => {
                       setSelectedMenu(item.path.replace("/", ""));
                     }}
-                    className={` ${
+                    className={` underLine_animation ${
                       item.path.replace("/", "") == selectedMenu
                         ? "selcted_menu"
                         : ""
-                    } underLine_animation p-2 min-w-[50px] rounded-[4px] flex justify-center items-center transform  transition duration-500 hover:scale-125`}
+                    }  p-2 min-w-[50px] flex justify-center items-center transform  transition duration-500 hover:scale-125`}
                   >
                     {item.label}
                   </a>
@@ -95,7 +94,7 @@ const NavBar = () => {
               })}
             </nav>
             <div className="hidden md:block ">
-              <button className="border rounded-md p-3 bg-white text-black transform transition duration-200 hover:bg-blue hover:scale-125 ">
+              <button className="border rounded-md p-2 bg-white text-black transform transition duration-200 hover:bg-blue hover:scale-125 ">
                 Resume
               </button>
             </div>
