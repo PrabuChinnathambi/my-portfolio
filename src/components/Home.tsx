@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import React from "react";
 import Layout from "./Layout";
-import PersonImg from "../../public/DevImage.svg";
+import PersonImg from "../../public/fotor-ai-20240306202840.jpg";
 import Image from "next/image";
 import AboutMe from "./AboutMe";
 import { UserCircleIcon } from "lucide-react";
@@ -10,32 +10,21 @@ import { UserCircleIcon } from "lucide-react";
 const Home = () => {
   return (
     <Layout>
-      <div className="container ">
+      <div className="container flex flex-col gap-[10rem] lg:mt-[40px] ">
         <div>
-          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <hr
-              className="h-px w-full bg-white animate-fade-left"
-              data-aos="flip-up"
-            />
-            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-jump-out animate-once animate-duration-[2000ms] animate-delay-1000font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text">
-              Welcome Home ...!
-            </h1>
-            <hr
-              className="w-full bg-white animate-fade-left "
-              data-aos="flip-up"
-            />
-          </div> */}
-          <div data-aos="zoom-in-up"
-            data-aos-duration="1000" 
-            className="flex justify-between items-center gap-[5rem] h-full rounded-sm  ">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            className="flex justify-between items-center gap-[5rem] h-full rounded-sm  "
+          >
             <div
               className="w-[60%] p-[20px] "
               data-aos="fade-right"
               // data-aos-delay="1000"
               data-aos-duration="1500"
             >
-              <h3 className=" text-white" >Web Developer</h3>
-              <h2 className=" text-white" >
+              <h3 className=" text-white">Web Developer</h3>
+              <h2 className=" text-white">
                 Hi, I'm <span className="text-blue  font-short ">Prabu</span>{" "}
                 <br />
                 Chinnathambi From India
@@ -56,11 +45,13 @@ const Home = () => {
               // data-aos-delay="1000"
               data-aos-duration="1500"
             >
-              <Image priority src={PersonImg} alt="Follow us on Twitter" />
+              <Image className="bg-no-repeat bg-cover bg-center bg-fixed" priority src={PersonImg} alt="Follow us on Twitter" />
             </div>
           </div>
         </div>
-        <div className="mt-[5rem]" ><AboutMe /></div>
+        <div>
+          <AboutMe />
+        </div>
       </div>
     </Layout>
   );

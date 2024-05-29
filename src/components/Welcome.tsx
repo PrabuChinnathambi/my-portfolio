@@ -7,8 +7,8 @@ import Link from "next/link";
 const Welcome = ({ handleClick }: { handleClick: () => void }) => {
   return (
     <div className="flex flex-col items-center">
-      <hr className="w-full bg-white animate-fade-left" data-aos="flip-up" />
-      <div className=" w-screen h-px animate-glow animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+      <hr className="w-full bg-white" data-aos="flip-up" />
+      <div className=" w-screen h-px animate-glow bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <h1
         data-aos-delay="300"
         data-aos="zoom-in"
@@ -17,7 +17,7 @@ const Welcome = ({ handleClick }: { handleClick: () => void }) => {
       >
         Prabu.Dev
       </h1>
-      <hr className="w-full bg-white animate-fade-right" data-aos="flip-up" />
+      <hr className="w-full bg-white" data-aos="flip-up" />
 
       <div onClick={handleClick}
       >
